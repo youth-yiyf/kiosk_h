@@ -700,9 +700,26 @@ function downloadAllStatusAsHTML() {
         .reserved { background-color: #ffebee; color: #c62828; font-weight: bold; }
         .available { background-color: #f8f9fa; color: #999; }
         .time-cell { background-color: #e3f2fd; font-weight: bold; }
+         /* 내부 wrapper의 box-sizing을 border-box로 통일 */
+        .screen,
+        .welcome-screen,
+        .welcome-overlay,
+        .welcome-image-container {
+          box-sizing: border-box;
+        }
+        /* .screen의 padding 중복 제거 (특히 태블릿/모바일) */
+        @media (max-width: 1024px) {
+          .screen {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+          }
+        }
     </style>
 </head>
 <body>
+  // 모든 검증을 통과하면 다음 화면으로 이동
+  showScreen('facility-screen');
+}
     <h1>🏠 흥덕청소년문화의집 예약 현황</h1>
     <div class="date">${todayStr}</div>
     <table>
