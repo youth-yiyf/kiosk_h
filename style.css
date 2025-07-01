@@ -115,8 +115,8 @@ body {
 
 .screen {
   display: none;
-  
-  padding: 0px 0px;
+  padding-left: 4vw;
+  padding-right: 4vw;
   min-height: calc(100vh - 140px);
 }
 
