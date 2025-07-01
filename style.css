@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
-* {
+html, body {
+  width: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 body {
@@ -15,11 +18,10 @@ body {
 }
 
 .container {
-  width: 100%;
-  max-width: none;
-  margin: 0; 
-  padding: 0;
+  width: 100vw;
   min-height: 100vh;
+  padding: 2vw 4vw;
+  margin: 0; 
   background: white;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
   position: relative;
@@ -27,18 +29,17 @@ body {
 }
 
 .header {
-  background: linear-gradient(135deg, #ff6b6b, #feca57);
-  color: white;
-  padding: 8px 0;
-  text-align: center;
-  position: relative;
-
   display: flex;
   flex-direction: column;
-  align-items: center;      /* 좌우 가운데 */
-  justify-content: center;  /* 상하 가운데 */
-  min-height: 80px;         /* 너무 얇아지지 않게 최소 높이(원하는 값으로 조정) */
-  height: 100px;            /* 원하는 높이로 조정 가능 */
+  align-items: center;
+  justify-content: center;
+  min-height: 12vh;
+  height: 12vh;
+  background: linear-gradient(135deg, #ff6b6b, #feca57);
+  color: white;
+  text-align: center;
+  position: relative;
+  padding: 0;
 }
 
 .header::before {
@@ -57,18 +58,16 @@ body {
   100% { transform: translateX(-50px) translateY(-70px); }
 }
 
+.header h1, .header p {
+  margin: 0;
+}
+
 .header h1 {
-  font-size: 1.8em;
-  margin-bottom: 10px;
-  position: relative;
-  z-index: 1;
+  font-size: 2.2rem;
 }
 
 .header p {
-  font-size: 1em;
-  opacity: 0.9;
-  position: relative;
-  z-index: 1;
+  font-size: 1.1rem;
 }
 
 .back-btn, .home-btn {
@@ -304,11 +303,19 @@ body {
   box-shadow: 0 8px 25px rgba(112, 225, 245, 0.3);
 }
 
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .facilities-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  margin-bottom: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .facility-card {
@@ -321,6 +328,9 @@ body {
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   border: 2px solid transparent;
+  max-width: 100%;
+  min-width: 0;
+  height: auto;
 }
 
 .facility-card:hover {
@@ -356,8 +366,6 @@ body {
 .facility-card.selected .facility-desc {
   color: rgba(255,255,255,0.9);
 }
-
-
 
 .form-group {
   margin-bottom: 25px;
@@ -822,4 +830,21 @@ body {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .header { min-height: 16vh; height: 16vh; }
+  .header h1 { font-size: 1.2rem; }
+  .facilities-grid { grid-template-columns: 1fr; }
+  .btn { font-size: 1rem; padding: 0.8em 1.2em; }
+}
+
+.btn {
+  font-size: 1.1rem;
+  padding: 1em 2em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
