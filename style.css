@@ -195,6 +195,8 @@ body {
 }
 
 .welcome-image-container {
+  padding: 0 4vw;
+  box-sizing: border-box;
   position: relative;
   width: 100%;
   height: calc(100vh - 120px);
