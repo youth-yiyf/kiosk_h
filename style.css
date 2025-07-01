@@ -10,6 +10,7 @@ body {
   font-family: 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
+  overflow: hidden;
   color: #333;
 }
 
@@ -20,7 +21,7 @@ body {
   padding: 0;
   min-height: 100vh;
   background: white;
-  box-shadow: 0 0 1000px rgba(0,0,0,0.1);
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
   position: relative;
   overflow: hidden;
 }
@@ -28,18 +29,23 @@ body {
 .header {
   background: linear-gradient(135deg, #ff6b6b, #feca57);
   color: white;
-  padding: 100px;
+  width: 100%;          /* 가로도 꽉 채움 */
+  height: 120px;
+  padding: 0;  /* 여백 제거 */
   text-align: center;
   position: relative;
+  align-items: center;  /* 수직 가운데 정렬 */
+  justify-content: center; /* 수평 가운데 정렬 */
+  overflow: hidden;      /* 내부 요소가 넘치지 않게 */
 }
 
 .header::before {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  top: 10PX;
+  left: 0%;
+  width: 100%;
+  height: 120px;;
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23pattern)"/></svg>');
   animation: float 20s infinite linear;
 }
@@ -109,7 +115,7 @@ body {
 .screen {
   display: none;
   
-  padding: 20px 30px;
+  padding: 0px 0px;
   min-height: calc(100vh - 140px);
 }
 
@@ -133,8 +139,6 @@ body {
   padding: 0 !important;
 }
 
-
-
 .welcome-screen {
   padding: 0 !important;
   margin: 0 !important;
@@ -147,7 +151,7 @@ body {
 }
 
 .welcome-overlay {
-  width: 100vw;
+  width: 100%; 
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -155,22 +159,22 @@ body {
 
 .welcome-buttons {
   position: absolute;
-  bottom: 360px;
+  bottom: 500px;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
+  display: flex;             /* 반드시 있어야 함 */
   flex-direction: column;
   align-items: center;
   gap: 3px;
-  z-index: 100;
+  z-index: 100;              /* 다른 요소에 가려지지 않게 */
 }
 
 .welcome-emoji {
   position: absolute;       
-  top: 200px;                /* 상단에서 30px 여백 */
+  top: 300px;                /* 상단에서 30px 여백 */
   left: 50%;                /* 가운데 정렬 */
   transform: translateX(-50%); /* 수평 중앙 정렬 */
-  font-size: 4em;
+  font-size: 3em;
   animation: bounce 2s infinite;
   z-index: 10;              /* 다른 요소 위에 보이도록 */
 }
@@ -192,7 +196,7 @@ body {
 .welcome-image-container {
   position: relative;
   width: 100%;
-  height: calc(100vh - 0px);
+  height: calc(100vh - 120px);
   background-image: url('https://i.imgur.com/NOWpxXN.jpeg');
   background-size: cover;
   background-position: center bottom;
@@ -202,7 +206,7 @@ body {
 }
 
 .welcome-text {
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: bold; 
   color: #ffffff;
   line-height: 1.6;
@@ -215,7 +219,6 @@ body {
   width: 100%;
   padding: 0 20px;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* 텍스트 외곽선 */
-  border-radius: 15px;
 }
 
 .btn {
