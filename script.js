@@ -143,15 +143,7 @@ function initializeFacilityNumberScreen() {
   numbers.forEach(num => {
     const numberCard = document.createElement('div');
     numberCard.classList.add('number-card');
-    // 9번인 경우 배려석 텍스트 추가
-    if (num === '9번') {
-      numberCard.innerHTML = `
-        <div>${num}</div>
-        <div style="font-size: 0.8em; color: #666; margin-top: 5px;">배려석</div>
-      `;
-    } else {
     numberCard.textContent = num;
-    }
     numberCard.setAttribute('onclick', 'selectFacilityNumber(this)');
     numberGrid.appendChild(numberCard);
   });
