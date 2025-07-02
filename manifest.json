@@ -1,0 +1,20 @@
+{
+  "name": "흥덕청소년문화의집",
+  "short_name": "흥덕-체크인",
+  "start_url": "https://youth-yiyf.github.io/kiosk/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#ff6b6b",
+  "icons": [
+    {
+      "src": "https://i.imgur.com/W7w0mQI.jpeg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.imgur.com/W7w0mQI.jpeg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
