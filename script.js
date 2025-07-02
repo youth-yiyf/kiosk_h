@@ -917,3 +917,26 @@ if (phoneDigits.length < 9 || phoneDigits.length > 11) {
   // 모든 검증을 통과하면 다음 화면으로 이동
   showUserInfoConfirmScreen();
 }
+
+function showUserInfoConfirmScreen() {
+  // 입력값 가져오기
+  const userName = document.getElementById('user-name').value.trim();
+  const userBirth = document.getElementById('user-birth').value;
+  const userPhone = document.getElementById('user-phone').value.trim();
+
+  // 정보 표시
+  document.getElementById('confirm-info-box').innerHTML = `
+    <p><strong>이름:</strong> ${userName}</p>
+    <p><strong>생년월일:</strong> ${userBirth}</p>
+    <p><strong>전화번호:</strong> ${userPhone}</p>
+  `;
+  showScreen('user-info-confirm-screen');
+}
+
+function goToFacilityScreen() {
+  showScreen('facility-screen');
+}
+
+function goBackToUserInfo() {
+  showScreen('user-info-screen');
+}
