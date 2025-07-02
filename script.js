@@ -72,7 +72,8 @@ function showScreen(screenId) {
     // 검색 화면 초기화
     clearSearch();
   } else if (screenId === 'all-status-screen') {
-    loadAllStatus();
+    // 바로 전체 시설 현황 보기
+    showAllFacilitiesStatus();
   }
 }
 
@@ -340,10 +341,10 @@ function loadAllStatus() {
   // 모든 시설 정의
   const allFacilities = [
     { name: '닌텐도', numbers: ['1번', '2번', '3번', '4번', '5번', '6번', '7번', '8번', '9번'] },
-    { name: '플레이스테이션', numbers: ['1번', '2번'] },
+    { name: '플레이\n스테이션', numbers: ['1번', '2번'] },
     { name: '노래방', numbers: ['1번', '2번'] },
-    { name: '보드게임', numbers: ['1번', '2번'] },
-    { name: '댄스연습실', numbers: [] },
+    { name: '보드\n게임', numbers: ['1번', '2번'] },
+    { name: '댄스\n연습실', numbers: [] },
     { name: '강의실', numbers: [] }
   ];
 
