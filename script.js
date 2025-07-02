@@ -72,8 +72,7 @@ function showScreen(screenId) {
     // 검색 화면 초기화
     clearSearch();
   } else if (screenId === 'all-status-screen') {
-    // 바로 전체 시설 현황 보기
-    showAllFacilitiesStatus();
+    loadAllStatus();
   }
 }
 
