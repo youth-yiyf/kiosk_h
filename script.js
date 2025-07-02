@@ -909,7 +909,7 @@ function validateUserInfo() {
   // 전화번호 형식 검증 (숫자 9~11자리)
   const phoneDigits = userPhone.replace(/[^0-9]/g, "");
 if (phoneDigits.length < 9 || phoneDigits.length > 11) {
-  alert('전화번호는 9~11자리 숫자여야 합니다. (집전화 or 휴대전화 등');
+  alert('전화번호는 9~11자리 숫자여야 합니다. (집전화 or 휴대전화 등)');
   document.getElementById('user-phone').focus();
   return;
 }
