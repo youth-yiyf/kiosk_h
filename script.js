@@ -112,7 +112,7 @@ function updateBackButton() {
 function selectFacility(element) {
   document.querySelectorAll('.facility-card').forEach(card => card.classList.remove('selected'));
   element.classList.add('selected');
-  selectedFacility = element.querySelector('.facility-name').textContent;
+  selectedFacility = element.querySelector('.facility-name').textContent.trim();
   
     if (selectedFacility === '댄스연습실' || selectedFacility === '강의실') {
     selectedFacilityNumber = ''; // 번호 없음
@@ -340,10 +340,10 @@ function loadAllStatus() {
   // 모든 시설 정의
   const allFacilities = [
     { name: '닌텐도', numbers: ['1번', '2번', '3번', '4번', '5번', '6번', '7번', '8번', '9번'] },
-    { name: '플레이\n스테이션', numbers: ['1번', '2번'] },
+    { name: '플레이스테이션', numbers: ['1번', '2번'] },
     { name: '노래방', numbers: ['1번', '2번'] },
-    { name: '보드\n게임', numbers: ['1번', '2번'] },
-    { name: '댄스\n연습실', numbers: [] },
+    { name: '보드게임', numbers: ['1번', '2번'] },
+    { name: '댄스연습실', numbers: [] },
     { name: '강의실', numbers: [] }
   ];
 
