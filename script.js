@@ -218,10 +218,10 @@ function updateTimeSlotAvailability() {
     
     // 현재 선택된 시설과 번호에 대한 예약이 있는지 확인
     const isReserved = reservations.some(r => 
-      r.facility === selectedFacility && 
-      r.facilityNumber === selectedFacilityNumber && 
+      r.facility.replace(/\n/g, '') === facility.name.replace(/\n/g, '') && 
+      r.facilityNumber === num && 
       r.date === today && 
-      r.time === timeData
+      r.time === timeSlot
     );
     
     if (isReserved) {
