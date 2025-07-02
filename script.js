@@ -376,6 +376,7 @@ function loadAllStatus() {
         facility.numbers.forEach(num => {
           const isReserved = reservations.some(r => 
             r.facility === facility.name && 
+            r.facility.replace(/\n/g, '') === facility.name.replace(/\n/g, '') && 
             r.facilityNumber === num && 
             r.date === today && 
             r.time === timeSlot
