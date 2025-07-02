@@ -139,7 +139,6 @@ function initializeFacilityNumberScreen() {
   } else if (selectedFacility === '보드게임') {
     numbers = ['1번', '2번'];
     // 선택된 시설이 없거나 정의되지 않은 경우 기본값
-    numbers = ['1번'];
   }
 
   numbers.forEach(num => {
