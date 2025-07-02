@@ -144,9 +144,9 @@ function initializeFacilityNumberScreen() {
     const numberCard = document.createElement('div');
     numberCard.classList.add('number-card');
     if (selectedFacility === '닌텐도' && num === '9번') {
-    numberCard.innerHTML = '9번<br><span style="font-size:0.9em; color:#ff8c00;">배려석</span>';
+      numberCard.innerHTML = '<div>9번</div><div style="font-size:0.9em; color:#ff8c00; margin-top:2px;">배려석</div>';
     } else {
-    numberCard.textContent = num;
+      numberCard.textContent = num;
     }
     numberCard.setAttribute('onclick', 'selectFacilityNumber(this)');
     numberGrid.appendChild(numberCard);
