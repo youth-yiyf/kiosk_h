@@ -319,6 +319,38 @@
   </div>
 </div>
 
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_MESSAGING_ID",
+    appId: "YOUR_APP_ID"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+
+  // 예약 저장 함수
+  window.saveReservation = function(reservationData) {
+    set(ref(database, 'reservations/' + reservationData.id), reservationData);
+  }
+
+  // 실시간 예약 읽기 함수
+  window.watchReservations = function(callback) {
+    const reservationsRef = ref(database, 'reservations/');
+    onValue(reservationsRef, (snapshot) => {
+      const data = snapshot.val();
+      callback(data);
+    });
+  }
+</script>
+
 <!-- 모달 배경 오버레이 (다운로드 모달용) -->
 <div id="download-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:999;" onclick="hideDownloadModal()"></div>
 
