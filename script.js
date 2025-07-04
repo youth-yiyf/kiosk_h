@@ -122,12 +122,19 @@ function selectFacility(element) {
   };
   selectedFacility = facilityNameMap[name] || name;
   
-  if (selectedFacility === '댄스\n연습실' || selectedFacility === '강의실') {
     selectedFacilityNumber = ''; // 번호 없음
-    showScreen('datetime-screen'); // 바로 날짜/시간 선택 화면으로 이동
-  } else {
-    showScreen('facility-number-screen'); // 기존대로 번호 선택 화면으로 이동
+showScreen('facility-number-screen'); // ✅ 방 번호 먼저
+}
+
+function goToDateTimeScreen() {
+  if (
+    (selectedFacility !== '댄스\n연습실' && selectedFacility !== '강의실') &&
+    !selectedFacilityNumber
+  ) {
+    alert("이용 공간을 선택해주세요.");
+    return;
   }
+  showScreen('datetime-screen');
 }
 
 // 시설별 번호를 동적으로 생성
