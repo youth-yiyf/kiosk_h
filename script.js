@@ -124,12 +124,12 @@ function selectFacility(element) {
   
     selectedFacilityNumber = ''; // 번호 없음
   // ✅ 시설 유형에 따라 다음 화면 분기
-    if (selectedFacility === '댄스\n연습실' || selectedFacility === '강의실') {
-      showScreen('datetime-screen'); // 바로 시간 선택
-    } else {
-      showScreen('facility-number-screen'); // 방 번호 선택
-    }
+  if (selectedFacility === '댄스\n연습실' || selectedFacility === '강의실') {
+    showScreen('datetime-screen');
+  } else {
+    showScreen('facility-number-screen'); // 그 외 시설은 방 번호 선택
   }
+}
 
 function goToDateTimeScreen() {
   if (
